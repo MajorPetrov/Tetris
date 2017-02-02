@@ -1,0 +1,61 @@
+#imgTetris
+{
+	height: 40%;
+	width: 15%;
+}
+
+
+#moskau_tetris
+{
+	float: left;
+	width: 300px;
+	height: 200px;
+	
+}
+
+#moskau_tetris_droite
+{
+	float: right; 
+	width: 300px;
+	height: 200px;
+	
+
+}
+
+body
+{
+	background-color: rgb(11, 22, 22);
+}
+
+h1
+{
+	margin-top: 0%;
+	text-align: center;
+	font-size: 150px;
+	color: rgb(255,73,0);
+}
+
+
+
+a
+{
+	
+	background-color: rgb(255,73,0);
+	border: solid 10px black;
+	border-radius: 10px;
+	padding: 30px;
+	font-size: 60px;
+	color: black;
+	margin-left: 5%;
+	
+}
+
+#names {
+	text-align: right;
+	font-family: Comic Sans MS;
+	font-style: italic;
+	color: white;
+	font-size: 30px;
+	margin-top: 50px;
+}
+
