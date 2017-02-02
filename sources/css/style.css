@@ -1,0 +1,70 @@
+body
+{
+	background-color: white;;
+}
+
+#arno {
+	background-color: #ff8c00;
+	margin-top: -70px;
+	margin-left: -20px;
+	margin-right: -20px;
+	padding-top: 20px;
+	padding-bottom: -20px;
+	border-bottom: solid red 7px;
+	height: 150px;
+	
+	}
+	
+h1 {
+	color: black;
+	font-family: Arial ;
+	font-weight: Bold;
+	font-size: 70px;
+	float: center;
+	text-align: center;
+	}
+	
+	#jeu {
+	padding: 20px;
+	padding-right: 40px;
+	border: solid 3px blue;
+	width: 600px;
+	height: 700px;
+	margin-right: 450px;
+	margin-left: 300px;
+	background-color: rgb(253,239,203);
+	}
+
+#score
+{
+	float: right;
+	font-size: 18pt;
+	font-family: Arial;
+	font-weight: Bold;
+	color: white;
+	width: 200px;
+	margin: 0 auto;
+	background-color: green;
+	border: 5px solid white;
+	border-radius: 10px;
+	margin-top: 200px;
+	margin-left: 250px;
+	margin-right: 100px;
+}
+
+#directions p
+{
+	font-size: 14pt;
+	font-family: sans-serif, verdana;
+	color: #fefefe;
+	width: 320px;
+	margin: 0 auto;
+}
+
+#pieceCanvas 
+{
+	float: right;
+	background-image: url("bg.png");
+	
+	
+}

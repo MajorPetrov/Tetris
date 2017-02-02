@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<meta http-equiv="content-type" content="text/html" charset="utf-8" />
+
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style42.css" />
+    <title> Tetris 42 </title>
+</head>
+
+<body>
+
+<center> <div id="titre">  TETRIS 42  </div> </center>
+
+</br> </br> 
+
+<div id="pname2"> JOUEUR 2 </br> <hr /> Entrez votre nom </br>	<input id="name2"  type="text" value=""></input> </div> 
+	 
+<div id="pname"> JOUEUR 1 </br> <hr /> Entrez votre nom</br>	<input id="name"  type="text" value=""></input> </div> 
+	 
+<center> <div id= "boutonStart" > Commencer le duel ! </div> </center>
+	 
+<center>
+	<div id="tout" >
+ 
+		<center> <p id="theText">  <span id="Tetriis"> </span> </p> </center>
+		
+		<center>	
+			<div id="J1">
+				
+				<div id="aside1">
+	
+					<canvas id="pieceCanvas" width="160" height="160"> </canvas> </br> 
+					<div id="thebonus1"> <p>Bonus restants:  <span id="Bonus1"> </span> </p> </div>
+					<div class="score"> <p>Score: <span id="lines"> </span> </p> </div>
+					<div class="nameJ" title="Cliquez pour connaître les touches" onClick=" touches1()"> <span id="nameresult"> </span> </div>
+
+				</div>
+
+				<canvas id="gameCanvas" width="320" height="640"> </canvas> </br>
+	
+			</div> 
+		
+		
+			<div id="J2">
+	
+				<canvas id="gameCanvas2" width="320" height="640"> </canvas>
+	  
+				<div id="aside2"> 
+	
+					<div><canvas id="pieceCanvas2" width="160" height="160"> </canvas> </div> </br>
+					<div id="thebonus2"> <p>Bonus restants:  <span id="Bonus2"> </span> </p> </div>
+					<div class="score"> <p>Score: <span id="lines2"> </span> </p> </div>
+					<div class="nameJ" title="Cliquez pour connaître les touches" onClick=" touches2()"> <span id="nameresult2"> </span> </div>
+
+				</div>
+
+
+			</div>
+
+		</center>
+	
+	</div>
+	
+</center>
+
+
+<script type="text/javascript" src="js/pieces.js"></script>
+<script type="text/javascript" src="js/BulkImageLoader.js"></script>
+
+
+<script type="text/javascript" charset="iso-8859-1" src="Tetris42.js"> </script>
+	
+</body>
+
+</html>

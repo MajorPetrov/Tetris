@@ -1,0 +1,189 @@
+body
+{
+	background-color: rgb(11, 22, 22);
+	min-height: 750px;
+}
+
+
+	
+#titre 
+{
+	color: rgb(255,73,0);
+	font-family: WST_Fre;
+	font-weight: Bold;
+	font-size: 150px;
+	margin-top: 20px;
+	}
+	
+#content
+{
+	width: 1100px;
+	height: 280px;
+}
+
+#meilleursScores
+{
+	
+	color: white;
+	margin-top: 50px;
+}
+
+#pname
+{
+	position: relative;
+	z-index: 1;
+	padding: 20px;
+	font-size: 25px;
+	font-family: Arial;
+	font-weight: Bold;
+	color: white;
+	width: 250px;
+	margin: 0 auto;
+	background-color: rgb(255,73,0);
+	border: 5px solid white;
+	border-radius: 10px;
+	margin-top: 50px;
+	text-align: center;
+}
+
+#difficulte
+{
+	position: relative;
+	z-index: 1;
+	padding: 20px;
+	font-size: 25px;
+	font-family: Arial;
+	font-weight: Bold;
+	color: white;
+	width: 250px;
+	margin: 0 auto;
+	background-color: rgb(255,73,0);
+	border: 5px solid white;
+	border-radius: 10px;
+	margin-top: 50px;
+	text-align: center;
+	float: right;
+	height: 210px;
+}
+
+#name
+{
+	margin-top: 10px;
+	font-size: 20pt;
+	font-family: Arial;
+	font-weight: Bold;
+	width: 80%;
+}
+
+#boutonStart
+{
+	padding: 20px;
+	font-size: 25px;
+	font-family: Arial;
+	font-weight: Bold;
+	color: white;
+	width: 200px;
+	margin: 0 auto;
+	background-color: rgb(255,73,0);
+	border: 5px solid white;
+	border-radius: 10px;
+	margin-top: 50px;
+	text-align: center;
+	width: 600px;
+	cursor: pointer;
+}
+
+#tout {
+	display: none;
+	position: relative;
+	z-index: 1;
+}
+	
+#jeu 
+{
+	padding: 10px;
+	padding-bottom: 2px;
+	border: solid 8px rgb(255,73,0);
+	width: 650px;
+	height: 650px;
+	background-color: rgb(0,0,51);
+}
+
+.nameJ
+{
+	margin-top: 150px;
+	text-align: center;
+	padding-top: 15px;
+	font-size: 30px;
+	font-family: Arial;
+	font-weight: Bold;
+	color: white;
+	background-color: rgb(255,73,0);
+	border: 5px solid white;
+	border-radius: 10px;
+	min-height: 30px;
+	cursor: pointer;
+}
+	
+#gameCanvas
+{
+	border: 1px solid white;
+	background-image: url("bg.png");
+	float: left;
+}
+
+#aside
+{
+	float: right;
+	margin-left: 10px;
+}
+
+.score
+{
+	
+	font-size: 18pt;
+	font-family: Arial;
+	font-weight: Bold;
+	color: white;
+	width: 200px;
+	margin: 0 auto;
+	background-color: red;
+	border: 5px solid white;
+	border-radius: 10px;
+	margin-right: 50px;
+	text-align: center;
+}
+
+#directions p
+{
+	font-size: 14pt;
+	font-family: sans-serif, verdana;
+	color: #fefefe;
+	width: 320px;
+	margin: 0 auto;
+}
+
+#pieceCanvas 
+{
+	background-image: url("bg.png");
+	margin-left: 100px;
+}
+
+#thebonus
+{
+	font-family: Arial;
+	font-size: 25px;
+	color: gold;
+}
+
+#theText
+{
+	width: 100%;
+	margin-top: 100px;
+	font-size: 250px;
+	color: gold;
+	font-family: Impact ;
+	position: absolute;
+	z-index:10;
+}
+
