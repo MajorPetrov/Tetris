@@ -1,0 +1,28 @@
+{
+  "name": "tetris",
+  "version": "1.0.0",
+  "description": "une implémentation du célèbre jeu Tetris en JavaScript",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MajorPetrov/Tetris.git"
+  },
+  "keywords": [
+    "tetris",
+    "video-game",
+    "JavaScript",
+    "node.js"
+  ],
+  "author": "MajorPetrov",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/MajorPetrov/Tetris/issues"
+  },
+  "homepage": "https://github.com/MajorPetrov/Tetris#readme",
+  "devDependencies": {
+    "electron": "^4.0.1"
+  }
+}
