@@ -1,6 +1,38 @@
+const ROWS = 20;
+const COLS = 10;
+const SIZE = 32;
+
+var canvas;
+var ctx;
+var blockImg;
+var bgImg;
+var gameOverImg;
+var curPiece;
+var gameData;
+var imgLoader;
+var prevTime;
+var curTime;
+var isGameOver;
+var lineSpan;
+var curLines;
+var touchX;
+var touchY;
+var touchId;
+var Bonus = 3;
+var bouton;
+var textTetris = "TETRIS";
+var boutonStart = document.getElementById("boutonStart");
+
+canvas2 = document.getElementById("pieceCanvas");
+ctx2 = canvas2.getContext("2d");
+boutonStart.addEventListener("click", affichername);
+
 function affichername() { 		//cette partie de la fonction sert à récupérer le nom entré par l'utilisateur et l'écrire ensuite dans le html
 	name = document.getElementById("name").value;
-	if (name == "") { name = "JOUEUR 1" }
+
+	if (name == "")
+		name = "JOUEUR 1";
+
 	nameSpan = document.getElementById("nameresult");
 	nameSpan.innerHTML = name.toString();
 
@@ -11,16 +43,18 @@ function affichername() { 		//cette partie de la fonction sert à récupérer le
 	document.getElementById('boutonStart').style.display = 'none';
 	document.getElementById('titre').style.display = 'none';
 
-	var themeTetris = new Audio("Tetris Theme.mp3");		//la musique démarre une fois que le nom est inscrit et que le jeu apparaît
+	var themeTetris = new Audio("../sounds/Tetris Theme.mp3");		//la musique démarre une fois que le nom est inscrit et que le jeu apparaît
 	themeTetris.play();
 
 	var element = document.difficult.dif;
-	for (var i = 0; i < element.length; i++) {
+
+	for (let i = 0; i < element.length; i++) {
 		if (element[i].checked) {
 			laDifficulte = element[i].value;
 			break;
 		}
 	}
+
 	if (laDifficulte == "facile") {
 		intervalle = 500;
 		N = 1;
@@ -58,48 +92,17 @@ function affichername() { 		//cette partie de la fonction sert à récupérer le
 	}
 
 	onReady(); 	//appel de la fonction qui charge les éléments de la page pour démarrer le jeu 
-
 }
-
-var boutonStart = document.getElementById("boutonStart");		//bouton pour lancer la partie
-boutonStart.addEventListener("click", affichername);
 
 function touches() {
 	alert("Déplacer à gauche : Q \n Déplacer à droite : D \n Déplacer vers le bas : S \n Rotation : Z \n Activer le bonus : Barre Espace  ");
 }
 
-//je prédéfinis par avance les variables pour pas m'embrouiller après
-var ROWS = 20; // je définis le nombre de colonnes et de lignes pour la grille
-var COLS = 10;
-var SIZE = 32;
-
-var canvas;
-var ctx;
-var blockImg;
-var bgImg;
-var gameOverImg;
-var curPiece;
-var gameData;
-var imgLoader;
-var prevTime;
-var curTime;
-var isGameOver;
-var lineSpan;
-var curLines;
-var touchX;
-var touchY;
-var touchId;
-var Bonus = 3;
-canvas2 = document.getElementById("pieceCanvas");
-ctx2 = canvas2.getContext("2d");
-var bouton;
-var textTetris = "TETRIS";
-
 function pause() {
-	alert('Le jeu est en pause, fermez la fenêtre pour reprendre'); //le bouton pause, il suspent juste l'action en cours de la page
+	alert('Le jeu est en pause, fermez la fenêtre pour reprendre');
 }
 
-var fonctionBonus = function () { //fonction bonus, à l'appui de la touche elle génère une nvlle pièce et la dessine dans le canvas
+function fonctionBonus() { //fonction bonus, à l'appui de la touche elle génère une nvlle pièce et la dessine dans le canvas
 
 	nextPiece = getRandomPiece();
 	ctx2.clearRect(0, 0, 160, 160);
@@ -109,7 +112,7 @@ var fonctionBonus = function () { //fonction bonus, à l'appui de la touche elle
 
 }
 
-var functionTetris = function () {			//fonction Tetris, appelée si 4 lignes sont complétées d'un coup,
+function functionTetris() {			//fonction Tetris, appelée si 4 lignes sont complétées d'un coup,
 	var sonTetris = new Audio("Tetris4.mp3");   		//elle affiche un texte pendant 4 sec,
 	sonTetris.play();								//joue un son
 	curLines = curLines + 6;							//donne 10 pts au lieu de 4 
@@ -332,16 +335,11 @@ function update() //très important, c'est le rafraichissment
 {
 	curTime = new Date().getTime();
 
-
-
 	if (curTime - prevTime > intervalle) {
-
 		if (checkMove(curPiece.gridx, curPiece.gridy + 1, curPiece.curState)) {
 			curPiece.gridy += 1;
-
 		}
 		else {
-
 			// Si j'ai bien compris, Arno établit la pièce suivante à afficher dans le second canvas à chaque fois qu'une pièce ne peut plus descendre
 			copyData(curPiece);
 			curPiece = nextPiece;  	//pour que la pièce qui apparaît dans le canvas du jeu soit celle qui était dans le petit canvas en haut à droite
@@ -349,12 +347,10 @@ function update() //très important, c'est le rafraichissment
 			nextPiece = getRandomPiece()
 			ctx2.clearRect(0, 0, 160, 160);		//génération de la nouvelle pièce à venir et dessin de celle ci dans le canvas approprié
 			drawNextPiece(nextPiece);
-
 		}
 
 		prevTime = curTime;
 	}
-
 
 	ctx.clearRect(0, 0, 320, 640);
 	drawBoard();
@@ -403,7 +399,6 @@ function checkLines() //c'est pour le score, il s'agit de vérifier si une ligne
 	var c = COLS - 1;
 	var nextLines = 0;
 
-
 	while (r >= 0) {
 		while (c >= 0) {
 			if (gameData[r][c] == 0) {
@@ -440,9 +435,9 @@ function checkLines() //c'est pour le score, il s'agit de vérifier si une ligne
 	if (curLines >= niv2 && N == 1) {
 		N = 2;
 		intervalle = 400;
-
 		niveau = "Niveau 2";
 		TetriisSpan.innerHTML = niveau.toString();
+
 		setTimeout(function () { 						//partie servant à l'affichage du texte durant 4 seconde à l'aide du "setTimeout
 			TetriisSpan.innerHTML = "";
 		}, 1000);//le jeu s'accélère à certains scores atteints
@@ -451,9 +446,9 @@ function checkLines() //c'est pour le score, il s'agit de vérifier si une ligne
 	if (curLines >= niv3 && N == 2) {
 		N = 3;
 		intervalle = 300;
-
 		niveau = "Niveau 3";
 		TetriisSpan.innerHTML = niveau.toString();
+
 		setTimeout(function () { 						//partie servant à l'affichage du texte durant 4 seconde à l'aide du "setTimeout
 			TetriisSpan.innerHTML = "";
 		}, 1000);//le jeu s'accélère à certains scores atteints
@@ -462,9 +457,9 @@ function checkLines() //c'est pour le score, il s'agit de vérifier si une ligne
 	if (curLines >= niv4 && N == 3) {
 		N = 4;
 		intervalle = 200;
-
 		niveau = "Niveau 4";
 		TetriisSpan.innerHTML = niveau.toString();
+
 		setTimeout(function () { 						//partie servant à l'affichage du texte durant 4 seconde à l'aide du "setTimeout
 			TetriisSpan.innerHTML = "";
 		}, 1000);//le jeu s'accélère à certains scores atteints
@@ -473,9 +468,9 @@ function checkLines() //c'est pour le score, il s'agit de vérifier si une ligne
 	if (curLines >= niv5 && N == 4) {
 		N = 5;
 		intervalle = 100;
-
 		niveau = "Niveau 5";
 		TetriisSpan.innerHTML = niveau.toString();
+
 		setTimeout(function () { 						//partie servant à l'affichage du texte durant 4 seconde à l'aide du "setTimeout
 			TetriisSpan.innerHTML = "";
 		}, 1000);//le jeu s'accélère à certains scores atteints
@@ -551,9 +546,9 @@ function drawNextPiece(p) //toujours pareil mais pour la pièce suivante
 
 			drawX += 1;
 		}
+
 		drawX = 1;
 		drawY += 1;
-
 	}
 }
 

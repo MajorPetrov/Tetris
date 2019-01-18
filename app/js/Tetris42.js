@@ -1,40 +1,3 @@
-
-function affichernames() {
-	name = document.getElementById("name").value;
-
-	if (name == "") { name = "JOUEUR 1" }
-	nameSpan = document.getElementById("nameresult");
-	nameSpan.innerHTML = name.toString();
-
-	name2 = document.getElementById("name2").value;
-
-	if (name2 == "") { name2 = "JOUEUR 2" }
-	nameSpan2 = document.getElementById("nameresult2");
-	nameSpan2.innerHTML = name2.toString();
-
-	document.getElementById('tout').style.display = 'block';
-	document.getElementById('pname').style.display = 'none';
-	document.getElementById('pname2').style.display = 'none';
-	document.getElementById('boutonStart').style.display = 'none';
-	document.getElementById('titre').style.display = 'none';
-
-	var themeTetris = new Audio("Tetris Theme.mp3");
-	themeTetris.play();
-
-	onReady();
-}
-
-var boutonStart = document.getElementById("boutonStart");
-boutonStart.addEventListener("click", affichernames);
-
-function touches1() {
-	alert("D�placer � gauche : Q \n D�placer � droite : D \n D�placer vers le bas : S \n Rotation : Z \n Activer le bonus : Barre Espace  ");
-}
-
-function touches2() {
-	alert("D�placer � gauche :  Fl�che directionnelle gauche \n D�placer � droite : Fl�che directionnelle droite \n D�placer vers le bas : Fl�che directionnelle bas \n Rotation : Fl�che directionnelle haut \n Activer le bonus : Pav Num 0  ");
-}
-
 var ROWS = 20;
 var COLS = 10;
 var SIZE = 32;
@@ -75,17 +38,50 @@ ctx3 = canvas3.getContext("2d");
 canvas4 = document.getElementById("pieceCanvas2");
 ctx4 = canvas4.getContext("2d");
 
+function affichernames() {
+	name = document.getElementById("name").value;
 
+	if (name == "")
+		name = "JOUEUR 1"
 
+	nameSpan = document.getElementById("nameresult");
+	nameSpan.innerHTML = name.toString();
+	name2 = document.getElementById("name2").value;
+
+	if (name2 == "")
+		name2 = "JOUEUR 2"
+
+	nameSpan2 = document.getElementById("nameresult2");
+	nameSpan2.innerHTML = name2.toString();
+
+	document.getElementById('tout').style.display = 'block';
+	document.getElementById('pname').style.display = 'none';
+	document.getElementById('pname2').style.display = 'none';
+	document.getElementById('boutonStart').style.display = 'none';
+	document.getElementById('titre').style.display = 'none';
+
+	var themeTetris = new Audio("Tetris Theme.mp3");
+	themeTetris.play();
+
+	onReady();
+}
+
+var boutonStart = document.getElementById("boutonStart");
+boutonStart.addEventListener("click", affichernames);
+
+function touches1() {
+	alert("D�placer � gauche : Q \n D�placer � droite : D \n D�placer vers le bas : S \n Rotation : Z \n Activer le bonus : Barre Espace  ");
+}
+
+function touches2() {
+	alert("D�placer � gauche :  Fl�che directionnelle gauche \n D�placer � droite : Fl�che directionnelle droite \n D�placer vers le bas : Fl�che directionnelle bas \n Rotation : Fl�che directionnelle haut \n Activer le bonus : Pav Num 0  ");
+}
 
 var pause = function () {
 	alert('Le jeu est en pause, fermez la fen�tre pour reprendre');
 }
 
-
-
-
-var fonctionBonus1 = function () {
+function fonctionBonus1() {
 	nextPiece = getRandomPiece();
 	ctx2.clearRect(0, 0, 160, 160);
 	drawNextPiece(nextPiece);
@@ -93,26 +89,20 @@ var fonctionBonus1 = function () {
 	bonusSpan1.innerHTML = Bonus1.toString();
 }
 
-var functionTetris = function () {
+function functionTetris() {
 	TetriisSpan.innerHTML = textTetris.toString();
 	setTimeout(function () {
 		TetriisSpan.innerHTML = "";
 	}, 4000);
 }
 
-var fonctionBonus2 = function () {
+function fonctionBonus2() {
 	nextPiece2 = getRandomPiece();  //coup de g�nie d'Arno, l'affichage de la pi�ce suivante
 	ctx4.clearRect(0, 0, 160, 160);
 	drawNextPiece2(nextPiece2);
 	Bonus2--;
 	bonusSpan2.innerHTML = Bonus2.toString();
 }
-
-
-
-
-
-
 
 document.body.addEventListener("touchmove", function (e) {
 	e.preventDefault();
@@ -175,17 +165,13 @@ function onReady() {
 	imgLoader.onReadyCallback = onImagesLoaded;
 	imgLoader.loadImages();
 	TetriisSpan = document.getElementById("Tetriis");
-
-
-
-
 	prevTime = curTime = 0;
-
 	document.onkeydown = getInput;
 }
 
 function getInput(e) {
-	if (!e) { var e = window.event; }
+	if (!e)
+		var e = window.event;
 
 	e.preventDefault();
 
@@ -292,6 +278,7 @@ function onImagesLoaded(e) {
 	blockImg = imgLoader.getImageAtIndex(0);
 	bgImg = imgLoader.getImageAtIndex(1);
 	gameOverImg = imgLoader.getImageAtIndex(2);
+
 	initGame();
 }
 
@@ -307,8 +294,6 @@ function initGame() {
 
 	var Bonus1 = 3;
 	var Bonus2 = 3;
-
-
 
 	if (gameData == undefined) {
 		gameData = new Array();
@@ -333,11 +318,11 @@ function initGame() {
 	}
 
 	curPiece = getRandomPiece();
-	nextPiece = getRandomPiece()  //test test test
+	nextPiece = getRandomPiece()
 	drawNextPiece(nextPiece);
 
 	curPiece2 = getRandomPiece();
-	nextPiece2 = getRandomPiece()  //test test test
+	nextPiece2 = getRandomPiece()
 	drawNextPiece2(nextPiece2);
 
 	lineSpan.innerHTML = curLines.toString();
@@ -357,47 +342,34 @@ function initGame() {
 function update() {
 	curTime = new Date().getTime();
 
-
 	if (curTime - prevTime > intervalle) {
-
 		if (checkMove(curPiece.gridx, curPiece.gridy + 1, curPiece.curState)) {
 			curPiece.gridy += 1;
 
 		}
 		else {
-
-
 			copyData(curPiece);
-			curPiece = nextPiece; // test test test
+			curPiece = nextPiece;
 
-			nextPiece = getRandomPiece()  //test test test
+			nextPiece = getRandomPiece()
 			ctx2.clearRect(0, 0, 160, 160);
 			drawNextPiece(nextPiece);
-
 		}
 
 		if (checkMove2(curPiece2.gridx, curPiece2.gridy + 1, curPiece2.curState)) {
 			curPiece2.gridy += 1;
-
 		}
 		else {
-
-
 			copyData2(curPiece2);
-			curPiece2 = nextPiece2; // test test test
+			curPiece2 = nextPiece2;
 
-			nextPiece2 = getRandomPiece()  //test test test
+			nextPiece2 = getRandomPiece()
 			ctx4.clearRect(0, 0, 160, 160);
 			drawNextPiece2(nextPiece2);
-
 		}
 
 		prevTime = curTime;
 	}
-
-
-
-
 
 	ctx.clearRect(0, 0, 320, 640);
 	drawBoard();
@@ -408,21 +380,19 @@ function update() {
 	drawPiece2(curPiece2);
 
 	if (isGameOver == true) {
-
 		ctx.drawImage(gameOverImg, 0, 0, 320, 640, 0, 0, 320, 640);
 		alert('          Bravo ' + name2 + ' !  Votre score est de ' + curLines2 + ' \n Appuyez sur une touche pour recommencer une partie');
-		initGame();
 
+		initGame();
 	}
 	else
 		requestAnimationFrame(update);
 
 	if (isGameOver2 == true) {
-
 		ctx3.drawImage(gameOverImg, 0, 0, 320, 640, 0, 0, 320, 640);
 		alert('          Bravo ' + name + '  !  Votre score est de ' + curLines + '\n Appuyez sur une touche pour recommencer une partie');
-		initGame();
 
+		initGame();
 	}
 	else
 		requestAnimationFrame(update);
@@ -466,6 +436,7 @@ function checkLines() {
 				fullRow = false;
 				c = -1;
 			}
+
 			c--;
 		}
 
@@ -475,6 +446,7 @@ function checkLines() {
 			lineFound = true;
 			curLines++;
 			nextLines++;
+
 			if (nextLines > 1) {
 				supLine(r);
 			}
@@ -487,12 +459,12 @@ function checkLines() {
 
 	if (lineFound && nextLines < 4) {
 		lineSpan.innerHTML = curLines.toString();
-		var sonLigne = new Audio("lignes.mp3");
+		var sonLigne = new Audio("../sounds/lignes.mp3");
 		sonLigne.play();
 	}
 
 	if (nextLines >= 4) {
-		var sonTetris = new Audio("Tetris4.mp3");
+		var sonTetris = new Audio("../sounds/Tetris4.mp3");
 		sonTetris.play();
 		curLines = curLines + 6;
 		lineSpan.innerHTML = curLines.toString();
@@ -528,11 +500,14 @@ function supLine(row) {
 		c = 0;
 		r++;
 	}
+
 	var color = Math.floor(Math.random() * 7) + 1;
+
 	while (c < COLS) {
 		gameData2[row - 1][c] = color;
 		c++;
 	}
+
 	c = 0;
 	gameData2[row - 1][Math.floor(Math.random() * 9) + 1] = 0;
 	gameData2[row - 1][Math.floor(Math.random() * 9) + 1] = 0;
@@ -602,9 +577,9 @@ function drawNextPiece(p) {
 
 			drawX += 1;
 		}
+
 		drawX = 1;
 		drawY += 1;
-
 	}
 }
 
@@ -703,13 +678,13 @@ function checkLines2() {
 	}
 
 	if (lineFound && nextLines2 < 4) {
-		var sonLigne = new Audio("lignes.mp3");
+		var sonLigne = new Audio("../sounds/lignes.mp3");
 		sonLigne.play();
 		lineSpan2.innerHTML = curLines2.toString();
 	}
 
 	if (nextLines2 >= 4) {
-		var sonTetris = new Audio("Tetris4.mp3");
+		var sonTetris = new Audio("../sounds/Tetris4.mp3");
 		sonTetris.play();
 		curLines2 = curLines2 + 6;
 		lineSpan2.innerHTML = curLines2.toString();
@@ -740,17 +715,20 @@ function supLine2(row) {
 			else {
 				gameData[r][c] = 0;
 			}
+
 			c++;
 		}
 
 		c = 0;
 		r++;
 	}
+
 	var color = Math.floor(Math.random() * 7) + 1;
 	while (c < COLS) {
 		gameData[row - 1][c] = color;
 		c++;
 	}
+
 	c = 0;
 	gameData[row - 1][Math.floor(Math.random() * 9) + 1] = 0;
 	gameData[row - 1][Math.floor(Math.random() * 9) + 1] = 0;
@@ -815,7 +793,6 @@ function drawNextPiece2(p) {
 	var drawY = 1;
 	var state = p.curState;
 
-
 	for (var r = 0, len = p.states[state].length; r < len; r++) {
 		for (var c = 0, len2 = p.states[state][r].length; c < len2; c++) {
 			if (p.states[state][r][c] == 1 && drawY >= 0) {
@@ -824,9 +801,9 @@ function drawNextPiece2(p) {
 
 			drawX += 1;
 		}
+
 		drawX = 1;
 		drawY += 1;
-
 	}
 }
 
