@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/MajorPetrov/Tetris#readme",
   "devDependencies": {
-    "electron": "^4.0.1"
+    "electron": "^4.1.3"
   }
 }
