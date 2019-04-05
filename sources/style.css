@@ -1,35 +1,27 @@
-body
-{
+body {
 	background-color: rgb(11, 22, 22);
 	min-height: 750px;
 }
 
-
-	
-#titre 
-{
-	color: rgb(255,73,0);
+#titre {
+	color: rgb(255, 73, 0);
 	font-family: WST_Fre;
 	font-weight: Bold;
 	font-size: 150px;
 	margin-top: 20px;
-	}
-	
-#content
-{
+}
+
+#content {
 	width: 1100px;
 	height: 280px;
 }
 
-#meilleursScores
-{
-	
+#meilleursScores {
 	color: white;
 	margin-top: 50px;
 }
 
-#pname
-{
+#pname {
 	position: relative;
 	z-index: 1;
 	padding: 20px;
@@ -39,15 +31,14 @@ body
 	color: white;
 	width: 250px;
 	margin: 0 auto;
-	background-color: rgb(255,73,0);
+	background-color: rgb(255, 73, 0);
 	border: 5px solid white;
 	border-radius: 10px;
 	margin-top: 50px;
 	text-align: center;
 }
 
-#difficulte
-{
+#difficulte {
 	position: relative;
 	z-index: 1;
 	padding: 20px;
@@ -57,7 +48,7 @@ body
 	color: white;
 	width: 250px;
 	margin: 0 auto;
-	background-color: rgb(255,73,0);
+	background-color: rgb(255, 73, 0);
 	border: 5px solid white;
 	border-radius: 10px;
 	margin-top: 50px;
@@ -66,8 +57,7 @@ body
 	height: 210px;
 }
 
-#name
-{
+#name {
 	margin-top: 10px;
 	font-size: 20pt;
 	font-family: Arial;
@@ -75,8 +65,7 @@ body
 	width: 80%;
 }
 
-#boutonStart
-{
+#boutonStart {
 	padding: 20px;
 	font-size: 25px;
 	font-family: Arial;
@@ -84,7 +73,7 @@ body
 	color: white;
 	width: 200px;
 	margin: 0 auto;
-	background-color: rgb(255,73,0);
+	background-color: rgb(255, 73, 0);
 	border: 5px solid white;
 	border-radius: 10px;
 	margin-top: 50px;
@@ -98,19 +87,17 @@ body
 	position: relative;
 	z-index: 1;
 }
-	
-#jeu 
-{
+
+#jeu {
 	padding: 10px;
 	padding-bottom: 2px;
-	border: solid 8px rgb(255,73,0);
+	border: solid 8px rgb(255, 73, 0);
 	width: 650px;
 	height: 650px;
-	background-color: rgb(0,0,51);
+	background-color: rgb(0, 0, 51);
 }
 
-.nameJ
-{
+.nameJ {
 	margin-top: 150px;
 	text-align: center;
 	padding-top: 15px;
@@ -118,29 +105,25 @@ body
 	font-family: Arial;
 	font-weight: Bold;
 	color: white;
-	background-color: rgb(255,73,0);
+	background-color: rgb(255, 73, 0);
 	border: 5px solid white;
 	border-radius: 10px;
 	min-height: 30px;
 	cursor: pointer;
 }
-	
-#gameCanvas
-{
+
+#gameCanvas {
 	border: 1px solid white;
 	background-image: url("bg.png");
 	float: left;
 }
 
-#aside
-{
+#aside {
 	float: right;
 	margin-left: 10px;
 }
 
-.score
-{
-	
+.score {
 	font-size: 18pt;
 	font-family: Arial;
 	font-weight: Bold;
@@ -154,8 +137,7 @@ body
 	text-align: center;
 }
 
-#directions p
-{
+#directions p {
 	font-size: 14pt;
 	font-family: sans-serif, verdana;
 	color: #fefefe;
@@ -163,27 +145,23 @@ body
 	margin: 0 auto;
 }
 
-#pieceCanvas 
-{
+#pieceCanvas {
 	background-image: url("bg.png");
 	margin-left: 100px;
 }
 
-#thebonus
-{
+#thebonus {
 	font-family: Arial;
 	font-size: 25px;
 	color: gold;
 }
 
-#theText
-{
+#theText {
 	width: 100%;
 	margin-top: 100px;
 	font-size: 250px;
 	color: gold;
-	font-family: Impact ;
+	font-family: Impact;
 	position: absolute;
-	z-index:10;
+	z-index: 10;
 }
-

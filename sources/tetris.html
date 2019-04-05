@@ -4,76 +4,94 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <title> Tetris </title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<title> Tetris </title>
 </head>
 
 <body>
 
-<div id="tout">
-		<center> <p id="theText">  <span id="Tetriis"> </span> </p> </center>
-		
-		<center> 
-			<div id="jeu"> 
-	 
+	<div id="tout">
+		<center>
+			<p id="theText"> <span id="Tetriis"> </span> </p>
+		</center>
+
+		<center>
+			<div id="jeu">
+
 				<canvas id="gameCanvas" width="320" height="640"> </canvas>
-	  
-				<div id="aside"> 
-	
+
+				<div id="aside">
+
 					<div><canvas id="pieceCanvas" width="160" height="160"> </canvas> </div> </br>
-					<div id="thebonus"> <p>Bonus restants:  <span id="Bonus"> </span> </p> </div>
-					<div class="score"> <p>Score: <span id="lines"> </span> </p> </div>
-					<div class="nameJ" title="Cliquez pour connaître les touches" onClick=" touches()"><p> <span id="nameresult"> </span></p> </div>
+					<div id="thebonus">
+						<p>Bonus restants: <span id="Bonus"> </span> </p>
+					</div>
+					<div class="score">
+						<p>Score: <span id="lines"> </span> </p>
+					</div>
+					<div class="nameJ" title="Cliquez pour connaître les touches" onClick=" touches()">
+						<p> <span id="nameresult"> </span></p>
+					</div>
 
 				</div>
 			</div>
-		</center> 
-	
-	
-</div> 	
-	
-	 <center> <div id="titre"> TETRIS </div>  </center> 
-	
+		</center>
+
+
+	</div>
+
+	<center>
+		<div id="titre"> TETRIS </div>
+	</center>
+
 	</br></br>
-	
-	<center> 
+
+	<center>
 		<div id="content">
-			<div id="difficulte" >  Choisissez la difficulté <hr />
-				<div align="left" ><form name="difficult">
-					<input type="radio" name="dif" value="facile" id="facile" checked="checked" /> <label for="facile">Facile</label><br />
-					<input type="radio" name="dif" value="intermediaire" id="intermediaire" /> <label for="intermediaire">Intermédiaire</label><br />
-					<input type="radio" name="dif" value="difficile" id="difficile" /> <label for="difficile">Difficile</label><br />
-					<input type="radio" name="dif" value="expert" id="expert" /> <label for="expert">Expert</label>
-				</form></div>
-			</div> 
-			
-			
+			<div id="difficulte"> Choisissez la difficulté
+				<hr />
+				<div align="left">
+					<form name="difficult">
+						<input type="radio" name="dif" value="facile" id="facile" checked="checked" /> <label
+							for="facile">Facile</label><br />
+						<input type="radio" name="dif" value="intermediaire" id="intermediaire" /> <label
+							for="intermediaire">Intermédiaire</label><br />
+						<input type="radio" name="dif" value="difficile" id="difficile" /> <label
+							for="difficile">Difficile</label><br />
+						<input type="radio" name="dif" value="expert" id="expert" /> <label for="expert">Expert</label>
+					</form>
+				</div>
+			</div>
+
+
 			<center>
-				<div id="pname">  Entrez votre nom</br> 	<input id="name"  type="text" value=""></input> </div> 
+				<div id="pname"> Entrez votre nom</br> <input id="name" type="text" value=""></input> </div>
 			</center>
 		</div>
-	   
-			
-		
-	
-	 
-	 <center> <div id= "boutonStart" > Commencer la partie! </div> </center>
+
+
+
+
+
+		<center>
+			<div id="boutonStart"> Commencer la partie! </div>
+		</center>
 	</center>
-	
-	
-
-	
-
-<script type="text/javascript" src="js/pieces.js"></script>
-<script type="text/javascript" src="js/BulkImageLoader.js"></script>
 
 
-<script type="text/javascript" charset="iso-8859-1" src="Tetris.js"> </script>
-
-	
 
 
-	
+
+	<script type="text/javascript" src="js/pieces.js"></script>
+	<script type="text/javascript" src="js/BulkImageLoader.js"></script>
+
+
+	<script type="text/javascript" charset="iso-8859-1" src="Tetris.js"> </script>
+
+
+
+
+
 
 
 

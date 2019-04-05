@@ -1,6 +1,6 @@
-body
-{
-	background-color: white;;
+body {
+	background-color: white;
+	;
 }
 
 #arno {
@@ -12,19 +12,18 @@ body
 	padding-bottom: -20px;
 	border-bottom: solid red 7px;
 	height: 150px;
-	
-	}
-	
+}
+
 h1 {
 	color: black;
-	font-family: Arial ;
+	font-family: Arial;
 	font-weight: Bold;
 	font-size: 70px;
 	float: center;
 	text-align: center;
-	}
-	
-	#jeu {
+}
+
+#jeu {
 	padding: 20px;
 	padding-right: 40px;
 	border: solid 3px blue;
@@ -32,11 +31,10 @@ h1 {
 	height: 700px;
 	margin-right: 450px;
 	margin-left: 300px;
-	background-color: rgb(253,239,203);
-	}
+	background-color: rgb(253, 239, 203);
+}
 
-#score
-{
+#score {
 	float: right;
 	font-size: 18pt;
 	font-family: Arial;
@@ -52,8 +50,7 @@ h1 {
 	margin-right: 100px;
 }
 
-#directions p
-{
+#directions p {
 	font-size: 14pt;
 	font-family: sans-serif, verdana;
 	color: #fefefe;
@@ -61,10 +58,7 @@ h1 {
 	margin: 0 auto;
 }
 
-#pieceCanvas 
-{
+#pieceCanvas {
 	float: right;
 	background-image: url("bg.png");
-	
-	
 }
