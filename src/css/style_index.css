@@ -1,39 +1,39 @@
-#imgTetris {
-	height: 40%;
-	width: 15%;
-}
-
-#moskau_tetris {
-	float: left;
-	width: 300px;
-	height: 200px;
-}
-
-#moskau_tetris_droite {
-	float: right;
-	width: 300px;
-	height: 200px;
-}
-
 body {
 	background-color: rgb(11, 22, 22);
 }
 
-h1 {
-	margin-top: 0%;
-	text-align: center;
-	font-size: 150px;
-	color: rgb(255, 73, 0);
+#moskau_tetris {
+	border: solid 10px black;
+	border-radius: 10px;
+	display: block;
+	width: 65%;
+	height: 65%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-a {
+#home .mode {
+	display: inline-block;
+	padding: 5px;
+	margin-left: 15%;
+	margin-right: 15%;
+	text-align: center;
 	background-color: rgb(255, 73, 0);
 	border: solid 10px black;
 	border-radius: 10px;
-	padding: 30px;
-	font-size: 60px;
+	/* padding: 15px; */
+	font-size: 30px;
 	color: black;
-	margin-left: 5%;
+	/* margin-top: 50px; */
+}
+
+footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	padding-right: 50px;
 }
 
 #names {
@@ -41,6 +41,5 @@ a {
 	font-family: Comic Sans MS;
 	font-style: italic;
 	color: white;
-	font-size: 30px;
-	margin-top: 50px;
+	font-size: 15px;
 }
